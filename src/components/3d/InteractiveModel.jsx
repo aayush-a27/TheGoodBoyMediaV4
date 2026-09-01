@@ -22,17 +22,18 @@ function AnimatedSphere({ mouse }) {
 
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
-      <mesh ref={meshRef} scale={2.2}>
-        <icosahedronGeometry args={[1, 1]} />
-        <MeshDistortMaterial
-          color="#C8463C"
-          roughness={0.3}
-          metalness={0.8}
-          distort={0.4}
-          speed={3}
-          envMapIntensity={1}
-        />
-      </mesh>
+      <group ref={meshRef} scale={2.2}>
+        {/* Connecting lines */}
+        <mesh>
+          <icosahedronGeometry args={[1, 3]} />
+          <meshBasicMaterial color="#EE6C4D" wireframe={true} transparent opacity={0.3} />
+        </mesh>
+        {/* Nodes (Dots) */}
+        <points>
+          <icosahedronGeometry args={[1, 3]} />
+          <pointsMaterial color="#F6DC43" size={0.03} sizeAttenuation={true} transparent opacity={0.9} />
+        </points>
+      </group>
     </Float>
   );
 }
@@ -52,7 +53,7 @@ function SecondaryOrb() {
     <mesh ref={meshRef} scale={0.6}>
       <octahedronGeometry args={[1, 0]} />
       <MeshDistortMaterial
-        color="#D4A843"
+        color="#F6DC43"
         roughness={0.2}
         metalness={0.9}
         distort={0.3}
@@ -97,7 +98,7 @@ export default function InteractiveModel({ className = '' }) {
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 5]} intensity={1.5} />
-          <pointLight position={[-10, -10, -5]} intensity={0.5} color="#D4A843" />
+          <pointLight position={[-10, -10, -5]} intensity={0.5} color="#F6DC43" />
           <AnimatedSphere mouse={mouse} />
           <SecondaryOrb />
           <Environment preset="studio" />

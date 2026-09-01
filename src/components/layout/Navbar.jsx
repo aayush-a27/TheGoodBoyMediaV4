@@ -5,12 +5,23 @@ import './Navbar.css';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const location = useLocation();
   const navRef = useRef(null);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsHidden(true); // Scrolled down
+      } else if (currentScrollY < lastScrollY.current) {
+        setIsHidden(false); // Scrolled up
+      }
+      
+      lastScrollY.current = currentScrollY;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -37,7 +48,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header ref={navRef} className={`navbar ${isScrolled ? 'navbar--scrolled' : ''} ${isOpen ? 'navbar--open' : ''}`}>
+    <header ref={navRef} className={`navbar ${isScrolled ? 'navbar--scrolled' : ''} ${isHidden ? 'navbar--hidden' : ''} ${isOpen ? 'navbar--open' : ''}`}>
       <div className="navbar__inner">
         <Link to="/" className="navbar__logo" aria-label="Home">
           <span className="navbar__logo-text">THE GOOD BOY</span>

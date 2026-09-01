@@ -8,15 +8,15 @@
   --color-cream:        #F6DC43;
   --color-off-white:    #F6DC43;
   --color-warm-white:   #F6DC43;
-  --color-parchment:    #FF2DF1;
+  --color-parchment:    #EE6C4D;
 
   /* Punchy Colors */
   --color-mustard:      #F6DC43;
   --color-muted-yellow: #F6DC43;
-  --color-orange:       #FF2DF1;
-  --color-tomato:       #FF2DF1;
+  --color-orange:       #EE6C4D;
+  --color-tomato:       #EE6C4D;
   --color-deep-burgundy:#A5158C;
-  --color-dusty-pink:   #FF2DF1;
+  --color-dusty-pink:   #EE6C4D;
   --color-sage:         #A5158C;
   --color-olive:        #A5158C;
   --color-faded-blue:   #A5158C;
@@ -28,7 +28,7 @@
   --color-ink:          #410445;
   --color-warm-gray:    #A5158C;
   --color-mid-gray:     #A5158C;
-  --color-light-gray:   #FF2DF1;
+  --color-light-gray:   #EE6C4D;
 
   /* Semantic */
   --color-text-primary:   var(--color-ink);
