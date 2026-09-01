@@ -29,15 +29,20 @@ export default function LoadingScreen({ onComplete }) {
 
     const loadAll = async () => {
       const promises = [
-        ...PRELOAD_IMAGES.map(src => preloadImage(src).then(updateProgress)),
-        ...PRELOAD_VIDEOS.map(src => preloadVideo(src).then(updateProgress))
+        ...PRELOAD_IMAGES.map(src => preloadImage(src).then(updateProgress).catch((err) => {
+          console.warn('Asset failed to load:', src, err);
+          updateProgress();
+        })),
+        ...PRELOAD_VIDEOS.map(src => preloadVideo(src).then(updateProgress).catch((err) => {
+          console.warn('Asset failed to load:', src, err);
+          updateProgress();
+        }))
       ];
 
-      // Wait for all assets (they handle their own errors so Promise.all won't throw)
-      // Timeout after 8 seconds to prevent indefinite hang
+      // Timeout after 8 seconds to prevent indefinite hang if something gets stuck
       const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 8000));
       
-      await Promise.race([Promise.all(promises), timeoutPromise]);
+      await Promise.race([Promise.allSettled(promises), timeoutPromise]);
 
       if (isMounted) {
         setProgress(100); // Ensure visual completion

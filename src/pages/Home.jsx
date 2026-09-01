@@ -12,17 +12,19 @@ export default function Home() {
     <div className="page-wrapper">
       <Hero />
 
-      <div className="home-marquee-wrap">
-        <HorizontalMarquee speed={30}>
-          THE GOOD BOY MEDIA — CREATIVE STRATEGY — DESIGN — DIGITAL — EXPERIMENTS
-        </HorizontalMarquee>
-      </div>
+      <div className="home-content-wrap">
+        <div className="home-marquee-wrap">
+          <HorizontalMarquee speed={30}>
+            THE GOOD BOY MEDIA — CREATIVE STRATEGY — DESIGN — DIGITAL — EXPERIMENTS
+          </HorizontalMarquee>
+        </div>
 
-      <Manifesto />
-      <Services />
-      <SelectedWorks />
-      <Experiments />
-      <ContactCTA />
+        <Manifesto />
+        <Services />
+        <SelectedWorks />
+        <Experiments />
+        <ContactCTA />
+      </div>
     </div>
   );
 }

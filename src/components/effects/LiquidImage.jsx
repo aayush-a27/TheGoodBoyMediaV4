@@ -141,6 +141,23 @@ export default function LiquidImage({ src, className = '', intensity = 0.15 }) {
       className={`liquid-image-container ${className}`}
       style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}
     >
+      {/* 
+        This base image appears instantly since it's preloaded. 
+        The Canvas (WebGL) will seamlessly render over it once ready.
+      */}
+      <img 
+        src={src} 
+        alt="" 
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          pointerEvents: 'none'
+        }} 
+      />
       {isInView && (
         <Canvas 
           frameloop="always" 

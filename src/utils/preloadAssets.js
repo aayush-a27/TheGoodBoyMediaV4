@@ -1,5 +1,5 @@
 export const preloadImage = (src) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const img = new Image();
     img.src = src;
 
@@ -8,20 +8,20 @@ export const preloadImage = (src) => {
         .then(() => resolve())
         .catch((err) => {
           console.warn(`Failed to decode image ${src}`, err);
-          resolve(); // Resolve anyway to not block the loading screen
+          reject(err);
         });
     } else {
       img.onload = () => resolve();
       img.onerror = (err) => {
         console.warn(`Failed to load image ${src}`, err);
-        resolve(); // Resolve anyway
+        reject(err);
       };
     }
   });
 };
 
 export const preloadVideo = (src) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const video = document.createElement('video');
     video.src = src;
     video.preload = 'auto';
@@ -30,7 +30,7 @@ export const preloadVideo = (src) => {
     // Some browsers might fire canplaythrough, but canplay is usually enough to start
     video.onerror = (err) => {
       console.warn(`Failed to load video ${src}`, err);
-      resolve(); // Resolve anyway
+      reject(err);
     };
     
     video.load();

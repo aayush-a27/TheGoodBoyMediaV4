@@ -2,6 +2,12 @@
    HOME PAGE SPECIFIC STYLES
    ═══════════════════════════════════════════ */
 
+.home-content-wrap {
+  position: relative;
+  z-index: 10;
+  background: var(--color-bg-primary);
+}
+
 .home-marquee-wrap {
   background: var(--color-charcoal);
   color: var(--color-cream);
