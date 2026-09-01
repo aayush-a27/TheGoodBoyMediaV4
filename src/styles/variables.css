@@ -5,30 +5,30 @@
 :root {
   /* ── COLOR SYSTEM ── */
   /* Primary Backgrounds */
-  --color-cream:        #F5F0E8;
-  --color-off-white:    #EDE8DE;
-  --color-warm-white:   #FAF7F2;
-  --color-parchment:    #E8E0D0;
+  --color-cream:        #F6DC43;
+  --color-off-white:    #F6DC43;
+  --color-warm-white:   #F6DC43;
+  --color-parchment:    #FF2DF1;
 
   /* Punchy Colors */
-  --color-mustard:      #D4A843;
-  --color-muted-yellow: #E8C94A;
-  --color-orange:       #E07B3C;
-  --color-tomato:       #C8463C;
-  --color-deep-burgundy:#6B1D2A;
-  --color-dusty-pink:   #C9918A;
-  --color-sage:         #7A8C6E;
-  --color-olive:        #5C6B4E;
-  --color-faded-blue:   #6B8CAE;
-  --color-cobalt:       #2E4A7A;
+  --color-mustard:      #F6DC43;
+  --color-muted-yellow: #F6DC43;
+  --color-orange:       #FF2DF1;
+  --color-tomato:       #FF2DF1;
+  --color-deep-burgundy:#A5158C;
+  --color-dusty-pink:   #FF2DF1;
+  --color-sage:         #A5158C;
+  --color-olive:        #A5158C;
+  --color-faded-blue:   #A5158C;
+  --color-cobalt:       #410445;
 
   /* Neutrals */
-  --color-charcoal:     #1A1A1A;
-  --color-dark:         #0E0E0E;
-  --color-ink:          #2C2824;
-  --color-warm-gray:    #9C9488;
-  --color-mid-gray:     #6B6560;
-  --color-light-gray:   #D4CDC4;
+  --color-charcoal:     #410445;
+  --color-dark:         #410445;
+  --color-ink:          #410445;
+  --color-warm-gray:    #A5158C;
+  --color-mid-gray:     #A5158C;
+  --color-light-gray:   #FF2DF1;
 
   /* Semantic */
   --color-text-primary:   var(--color-ink);
