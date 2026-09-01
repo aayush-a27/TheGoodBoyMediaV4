@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './Hero.css';
-import heroVideo from '../../assets/videos/18069232-uhd_3840_2160_24fps.mp4';
+import { ASSETS } from '../../config/assets';
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="hero__video-wrap">
         <video
           className="hero__video"
-          src={heroVideo}
+          src={ASSETS.heroVideo}
           autoPlay
           muted
           loop

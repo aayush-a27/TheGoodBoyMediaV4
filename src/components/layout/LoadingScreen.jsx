@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { preloadImage, preloadVideo } from '../../utils/preloadAssets';
+import { PRELOAD_IMAGES, PRELOAD_VIDEOS } from '../../config/assets';
 import './LoadingScreen.css';
 
 export default function LoadingScreen({ onComplete }) {
@@ -6,30 +8,53 @@ export default function LoadingScreen({ onComplete }) {
   const [phase, setPhase] = useState('loading'); // loading | exit
 
   useEffect(() => {
-    let raf;
-    let start = null;
-    const duration = 2800;
+    let isMounted = true;
+    let loadedCount = 0;
+    
+    const totalAssets = PRELOAD_IMAGES.length + PRELOAD_VIDEOS.length;
+    if (totalAssets === 0) {
+      setProgress(100);
+      setPhase('exit');
+      setTimeout(() => isMounted && onComplete?.(), 800);
+      return;
+    }
 
-    const animate = (timestamp) => {
-      if (!start) start = timestamp;
-      const elapsed = timestamp - start;
-      const p = Math.min(elapsed / duration, 1);
-      // Eased progress
-      const eased = 1 - Math.pow(1 - p, 3);
-      setProgress(Math.round(eased * 100));
-
-      if (p < 1) {
-        raf = requestAnimationFrame(animate);
-      } else {
-        setPhase('exit');
-        setTimeout(() => {
-          onComplete?.();
-        }, 800);
+    const updateProgress = () => {
+      loadedCount++;
+      const percent = Math.round((loadedCount / totalAssets) * 100);
+      if (isMounted) {
+        setProgress(percent);
       }
     };
 
-    raf = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(raf);
+    const loadAll = async () => {
+      const promises = [
+        ...PRELOAD_IMAGES.map(src => preloadImage(src).then(updateProgress)),
+        ...PRELOAD_VIDEOS.map(src => preloadVideo(src).then(updateProgress))
+      ];
+
+      // Wait for all assets (they handle their own errors so Promise.all won't throw)
+      // Timeout after 8 seconds to prevent indefinite hang
+      const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 8000));
+      
+      await Promise.race([Promise.all(promises), timeoutPromise]);
+
+      if (isMounted) {
+        setProgress(100); // Ensure visual completion
+        setTimeout(() => {
+          if (isMounted) {
+            setPhase('exit');
+            setTimeout(() => isMounted && onComplete?.(), 800);
+          }
+        }, 200); // Short delay to let user see 100%
+      }
+    };
+
+    loadAll();
+
+    return () => {
+      isMounted = false;
+    };
   }, [onComplete]);
 
   return (
