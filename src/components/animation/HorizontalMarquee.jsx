@@ -7,7 +7,7 @@ const HorizontalMarquee = memo(function HorizontalMarquee({
   direction = 'left',
   className = '',
   separator = '—',
-  repeat = 4,
+  repeat = 12,
 }) {
   const content = Array.from({ length: repeat }, (_, i) => (
     <span key={i} className="marquee__item">

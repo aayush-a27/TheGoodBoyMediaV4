@@ -8,22 +8,16 @@
 .marquee__track {
   display: flex;
   width: max-content;
-  will-change: transform;
-  animation-name: marquee-scroll;
-  animation-duration: var(--marquee-duration, 30s);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: var(--marquee-direction, normal);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee__track {
+  .marquee__content {
     animation-duration: var(--marquee-duration, 30s) !important;
     animation-iteration-count: infinite !important;
   }
 }
 
-.marquee:hover .marquee__track {
+.marquee:hover .marquee__content {
   animation-play-state: paused;
 }
 
@@ -31,6 +25,12 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  will-change: transform;
+  animation-name: marquee-scroll;
+  animation-duration: var(--marquee-duration, 30s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: var(--marquee-direction, normal);
 }
 
 .marquee__item {
