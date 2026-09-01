@@ -1,0 +1,34 @@
+.torn-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.torn-edge--top {
+  top: -1px;
+}
+
+.torn-edge--bottom {
+  bottom: -1px;
+}
+
+.torn-edge--flip {
+  transform: scaleY(-1);
+}
+
+.torn-edge__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .torn-edge {
+    height: 35px;
+  }
+}

@@ -1,0 +1,9 @@
+/* ═══════════════════════════════════════════
+   HOME PAGE SPECIFIC STYLES
+   ═══════════════════════════════════════════ */
+
+.home-marquee-wrap {
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+  border-bottom: 1px solid rgba(245, 240, 232, 0.08);
+}

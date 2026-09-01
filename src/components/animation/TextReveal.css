@@ -1,0 +1,14 @@
+.text-reveal {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  color: var(--color-light-gray);
+}
+
+.text-reveal__word {
+  display: inline-block;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  opacity: 0.15;
+  color: var(--color-light-gray);
+}

@@ -1,0 +1,121 @@
+/* ═══════════════════════════════════════════
+   THE GOOD BOY MEDIA — Design Tokens
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* ── COLOR SYSTEM ── */
+  /* Primary Backgrounds */
+  --color-cream:        #F5F0E8;
+  --color-off-white:    #EDE8DE;
+  --color-warm-white:   #FAF7F2;
+  --color-parchment:    #E8E0D0;
+
+  /* Punchy Colors */
+  --color-mustard:      #D4A843;
+  --color-muted-yellow: #E8C94A;
+  --color-orange:       #E07B3C;
+  --color-tomato:       #C8463C;
+  --color-deep-burgundy:#6B1D2A;
+  --color-dusty-pink:   #C9918A;
+  --color-sage:         #7A8C6E;
+  --color-olive:        #5C6B4E;
+  --color-faded-blue:   #6B8CAE;
+  --color-cobalt:       #2E4A7A;
+
+  /* Neutrals */
+  --color-charcoal:     #1A1A1A;
+  --color-dark:         #0E0E0E;
+  --color-ink:          #2C2824;
+  --color-warm-gray:    #9C9488;
+  --color-mid-gray:     #6B6560;
+  --color-light-gray:   #D4CDC4;
+
+  /* Semantic */
+  --color-text-primary:   var(--color-ink);
+  --color-text-secondary: var(--color-warm-gray);
+  --color-text-muted:     var(--color-light-gray);
+  --color-bg-primary:     var(--color-cream);
+  --color-bg-secondary:   var(--color-off-white);
+  --color-bg-dark:        var(--color-charcoal);
+  --color-accent:         var(--color-tomato);
+  --color-accent-alt:     var(--color-mustard);
+
+  /* ── TYPOGRAPHY ── */
+  /* Font Families — easy to swap later */
+  --font-display:    'Syne', 'Arial Black', sans-serif;
+  --font-heading:    'Playfair Display', 'Georgia', serif;
+  --font-body:       'Space Grotesk', 'Helvetica Neue', sans-serif;
+  --font-mono:       'Space Mono', 'Courier New', monospace;
+
+  /* Font Sizes — Fluid */
+  --text-xs:    clamp(0.625rem, 0.55rem + 0.25vw, 0.75rem);
+  --text-sm:    clamp(0.75rem, 0.65rem + 0.35vw, 0.875rem);
+  --text-base:  clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-md:    clamp(1rem, 0.9rem + 0.4vw, 1.125rem);
+  --text-lg:    clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --text-xl:    clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  --text-2xl:   clamp(1.5rem, 1.1rem + 1.5vw, 2.25rem);
+  --text-3xl:   clamp(2rem, 1.4rem + 2.5vw, 3.25rem);
+  --text-4xl:   clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  --text-5xl:   clamp(3rem, 1.5rem + 6vw, 7rem);
+  --text-6xl:   clamp(3.5rem, 1rem + 8vw, 10rem);
+  --text-hero:  clamp(3rem, 1rem + 7vw, 9rem);
+
+  /* Font Weights */
+  --weight-light:     300;
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-black:     900;
+
+  /* Line Heights */
+  --leading-none:   1;
+  --leading-tight:  1.1;
+  --leading-snug:   1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.65;
+
+  /* Letter Spacing */
+  --tracking-tight:   -0.03em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.05em;
+  --tracking-wider:   0.1em;
+  --tracking-widest:  0.2em;
+
+  /* ── SPACING ── */
+  --space-xs:   clamp(0.25rem, 0.2rem + 0.2vw, 0.5rem);
+  --space-sm:   clamp(0.5rem, 0.4rem + 0.4vw, 1rem);
+  --space-md:   clamp(1rem, 0.7rem + 1vw, 1.5rem);
+  --space-lg:   clamp(1.5rem, 1rem + 2vw, 3rem);
+  --space-xl:   clamp(2rem, 1rem + 3vw, 5rem);
+  --space-2xl:  clamp(3rem, 1.5rem + 5vw, 8rem);
+  --space-3xl:  clamp(4rem, 2rem + 7vw, 12rem);
+  --space-section: clamp(5rem, 3rem + 8vw, 10rem);
+
+  /* ── LAYOUT ── */
+  --max-width:      1400px;
+  --gutter:         clamp(1rem, 0.5rem + 2vw, 3rem);
+  --nav-height:     80px;
+  --border-radius:  4px;
+
+  /* ── TRANSITIONS ── */
+  --ease-out-expo:    cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-quart:   cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
+  --duration-fast:    200ms;
+  --duration-normal:  400ms;
+  --duration-slow:    800ms;
+  --duration-slower:  1200ms;
+
+  /* ── Z-INDEX ── */
+  --z-grain:     9999;
+  --z-cursor:    9998;
+  --z-loader:    9997;
+  --z-nav:       1000;
+  --z-modal:     900;
+  --z-overlay:   800;
+  --z-dropdown:  700;
+  --z-content:   1;
+  --z-below:     -1;
+}

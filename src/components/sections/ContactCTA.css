@@ -1,0 +1,121 @@
+.contact-cta {
+  position: relative;
+  background: var(--color-cream);
+  padding: var(--space-3xl) 0;
+  overflow: hidden;
+}
+
+.contact-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2xl);
+  position: relative;
+}
+
+.contact-cta__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 700px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-cta__label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-warm-gray);
+}
+
+.contact-cta__title {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-black);
+  color: var(--color-charcoal);
+  line-height: var(--leading-tight);
+}
+
+.contact-cta__title em {
+  color: var(--color-tomato);
+  font-weight: var(--weight-regular);
+}
+
+.contact-cta__sub {
+  font-size: var(--text-lg);
+  color: var(--color-mid-gray);
+  line-height: var(--leading-relaxed);
+  max-width: 500px;
+}
+
+.contact-cta__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.contact-cta__email {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-charcoal);
+  text-decoration: none;
+  position: relative;
+  letter-spacing: var(--tracking-wide);
+}
+
+.contact-cta__email::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-tomato);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.contact-cta__email:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Decoration */
+.contact-cta__decoration {
+  position: absolute;
+  right: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 350px;
+  height: 350px;
+  opacity: 1;
+  animation: rotate 30s linear infinite;
+}
+
+.contact-cta__star {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .contact-cta__title {
+    font-size: var(--text-4xl);
+  }
+
+  .contact-cta__decoration {
+    width: 200px;
+    height: 200px;
+    right: -50px;
+    top: auto;
+    bottom: -50px;
+    transform: none;
+  }
+
+  .contact-cta__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

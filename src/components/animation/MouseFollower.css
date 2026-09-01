@@ -1,0 +1,50 @@
+.mouse-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--color-tomato);
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transition: width 0.3s var(--ease-out-expo),
+              height 0.3s var(--ease-out-expo),
+              opacity 0.3s ease,
+              background-color 0.3s ease;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  mix-blend-mode: difference;
+  background: transparent;
+}
+
+.mouse-follower--visible {
+  opacity: 1;
+}
+
+.mouse-follower--active {
+  width: 90px;
+  height: 90px;
+  background: var(--color-tomato);
+  mix-blend-mode: normal;
+  transform-origin: center;
+}
+
+.mouse-follower__text {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-cream);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .mouse-follower {
+    display: none;
+  }
+}

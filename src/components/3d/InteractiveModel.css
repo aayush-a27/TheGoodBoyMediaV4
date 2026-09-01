@@ -1,0 +1,19 @@
+.interactive-model {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .interactive-model {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .interactive-model {
+    height: 280px;
+  }
+}
