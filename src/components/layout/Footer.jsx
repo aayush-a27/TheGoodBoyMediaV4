@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import djBoy from '../../assets/images/DJ boy-bro.svg';
 import './Footer.css';
 
 export default function Footer() {
@@ -62,7 +63,7 @@ export default function Footer() {
       <div className="footer-v2__main">
         {/* ARTWORK (ABSOLUTE POSITIONED) */}
         <div className="footer-v2__artwork" ref={artworkRef}>
-          <img src="/assets/footer-character.png" alt="The Good Boy Character" />
+          <img src={djBoy} alt="The Good Boy Character" />
         </div>
 
         <div className="footer-v2__grid container">
