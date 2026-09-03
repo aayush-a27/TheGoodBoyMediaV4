@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import EyeLogo from '../ui/EyeLogo';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -50,9 +51,8 @@ export default function Navbar() {
   return (
     <header ref={navRef} className={`navbar ${isScrolled ? 'navbar--scrolled' : ''} ${isHidden ? 'navbar--hidden' : ''} ${isOpen ? 'navbar--open' : ''}`}>
       <div className="navbar__inner">
-        <Link to="/" className="navbar__logo" aria-label="Home">
-          <span className="navbar__logo-text">THE GOOD BOY</span>
-          <span className="navbar__logo-sub">MEDIA</span>
+        <Link to="/" className="navbar__logo" aria-label="THE GOOD BOY MEDIA — Home">
+          <EyeLogo />
         </Link>
 
         <nav className="navbar__nav" id="main-nav" role="navigation" aria-label="Main navigation">

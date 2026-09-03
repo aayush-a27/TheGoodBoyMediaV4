@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════
+   EYE LOGO — Interactive "O" Eyes
+   ═══════════════════════════════════════════ */
+
+/* ── Container ── */
+.eye-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  user-select: none;
+}
+
+.eye-logo__line {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 0.7rem + 0.8vw, 1.2rem);
+  font-weight: var(--weight-black);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.eye-logo__sub {
+  font-family: var(--font-mono);
+  font-size: clamp(0.5rem, 0.4rem + 0.3vw, 0.65rem);
+  font-weight: var(--weight-regular);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-tomato);
+  margin-top: 2px;
+}
+
+/* ── GOOD word wrapper ── */
+.eye-logo__word-good {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ── Text segments ── */
+.eye-logo__text {
+  display: inline;
+}
+
+/* ── Eye ── */
+.eye-logo__eye {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Spacing equivalent to normal letter spacing */
+  margin: 0 0.02em;
+}
+
+.eye-logo__sclera {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Size matches the cap-height of the surrounding text */
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.eye-logo__pupil {
+  position: absolute;
+  width: 0.38em;
+  height: 0.38em;
+  border-radius: 50%;
+  background: #000000;
+  /* Start centered */
+  top: 50%;
+  left: 50%;
+  margin-top: -0.19em;
+  margin-left: -0.19em;
+  will-change: transform;
+  /* Slight transition smoothness as fallback */
+  transition: transform 0.05s linear;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .eye-logo__pupil {
+    transform: translate(0px, 0px) !important;
+    transition: none;
+  }
+}
+
+/* ── Color inheritance for dark/scrolled navbar states ── */
+
+/* When the navbar is open (mobile overlay uses dark text) */
+.navbar--open .eye-logo__line {
+  color: var(--color-charcoal);
+}
+
+.navbar--open .eye-logo__sclera {
+  background: var(--color-charcoal);
+}
+
+.navbar--open .eye-logo__pupil {
+  background: var(--color-cream, #ffffff);
+}
+
+/* When scrolled on dark navbar variant */
+.navbar--dark.navbar--scrolled .eye-logo__line {
+  color: var(--color-charcoal);
+}
+
+.navbar--dark.navbar--scrolled .eye-logo__sclera {
+  background: var(--color-charcoal);
+}
+
+.navbar--dark.navbar--scrolled .eye-logo__pupil {
+  background: var(--color-cream, #ffffff);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .eye-logo__sclera {
+    width: 0.7em;
+    height: 0.7em;
+  }
+
+  .eye-logo__pupil {
+    width: 0.35em;
+    height: 0.35em;
+    margin-top: -0.175em;
+    margin-left: -0.175em;
+  }
+}
+
+@media (max-width: 480px) {
+  .eye-logo__sclera {
+    width: 0.65em;
+    height: 0.65em;
+  }
+
+  .eye-logo__pupil {
+    width: 0.32em;
+    height: 0.32em;
+    margin-top: -0.16em;
+    margin-left: -0.16em;
+  }
+}
