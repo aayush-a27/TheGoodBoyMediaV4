@@ -34,9 +34,6 @@ export default function Hero() {
         </h1>
 
         <div className="hero__bottom">
-          <p className="hero__sub font-mono">
-            Strategy + Creativity + Technology + Experimentation
-          </p>
           <div className="hero__scroll-hint" aria-hidden="true">
             <span className="hero__scroll-text font-mono">Scroll</span>
             <div className="hero__scroll-line" />

@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 2px solid var(--color-tomato);
   pointer-events: none;
@@ -26,8 +26,8 @@
 }
 
 .mouse-follower--active {
-  width: 90px;
-  height: 90px;
+  width: 65px;
+  height: 65px;
   background: var(--color-tomato);
   mix-blend-mode: normal;
   transform-origin: center;
