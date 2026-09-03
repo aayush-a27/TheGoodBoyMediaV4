@@ -48,16 +48,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-parchment);
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-warm-gray);
+  background: #222222;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-mid-gray);
+  background: #444444;
 }
 
 /* ── LINKS ── */

@@ -139,7 +139,7 @@
 }
 
 .experiments__gen-line {
-  animation: drawStroke 2s ease forwards;
+  animation: drawStroke 4s ease-in-out infinite alternate;
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
 }
@@ -151,17 +151,20 @@
   align-items: center;
   justify-content: center;
   min-height: 350px;
+  container-type: inline-size;
 }
 
 .experiments__type-demo {
   display: flex;
   align-items: baseline;
-  gap: 0.1em;
+  justify-content: center;
+  width: 100%;
+  gap: 2cqw;
 }
 
 .experiments__type-char {
   font-family: var(--font-display);
-  font-size: var(--text-5xl);
+  font-size: 11cqw;
   text-transform: uppercase;
   color: var(--color-cream);
   transition: color 0.3s ease, transform 0.3s ease;

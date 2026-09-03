@@ -14,7 +14,7 @@ export default function Home() {
 
       <div className="home-content-wrap">
         <div className="home-marquee-wrap">
-          <HorizontalMarquee speed={30}>
+          <HorizontalMarquee speed={0}>
             THE GOOD BOY MEDIA — CREATIVE STRATEGY — DESIGN — DIGITAL — EXPERIMENTS
           </HorizontalMarquee>
         </div>

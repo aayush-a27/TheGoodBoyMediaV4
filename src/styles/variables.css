@@ -5,30 +5,30 @@
 :root {
   /* ── COLOR SYSTEM ── */
   /* Primary Backgrounds */
-  --color-cream:        #F6DC43;
-  --color-off-white:    #F6DC43;
-  --color-warm-white:   #F6DC43;
-  --color-parchment:    #EE6C4D;
+  --color-cream:        #FFFFFF;
+  --color-off-white:    #FFFFFF;
+  --color-warm-white:   #FFFFFF;
+  --color-parchment:    #FFFFFF;
 
-  /* Punchy Colors */
-  --color-mustard:      #F6DC43;
-  --color-muted-yellow: #F6DC43;
-  --color-orange:       #EE6C4D;
-  --color-tomato:       #EE6C4D;
-  --color-deep-burgundy:#A5158C;
-  --color-dusty-pink:   #EE6C4D;
-  --color-sage:         #A5158C;
-  --color-olive:        #A5158C;
-  --color-faded-blue:   #A5158C;
-  --color-cobalt:       #410445;
+  /* Punchy Colors (Now all mapped to Red) */
+  --color-mustard:      #FE3424;
+  --color-muted-yellow: #FE3424;
+  --color-orange:       #FE3424;
+  --color-tomato:       #FE3424;
+  --color-deep-burgundy:#FE3424;
+  --color-dusty-pink:   #FE3424;
+  --color-sage:         #FE3424;
+  --color-olive:        #FE3424;
+  --color-faded-blue:   #FE3424;
+  --color-cobalt:       #FE3424;
 
-  /* Neutrals */
-  --color-charcoal:     #410445;
-  --color-dark:         #410445;
-  --color-ink:          #410445;
-  --color-warm-gray:    #A5158C;
-  --color-mid-gray:     #A5158C;
-  --color-light-gray:   #EE6C4D;
+  /* Neutrals (Now Black or Red) */
+  --color-charcoal:     #000000;
+  --color-dark:         #000000;
+  --color-ink:          #000000;
+  --color-warm-gray:    #FE3424;
+  --color-mid-gray:     #FE3424;
+  --color-light-gray:   #FE3424;
 
   /* Semantic */
   --color-text-primary:   var(--color-ink);
