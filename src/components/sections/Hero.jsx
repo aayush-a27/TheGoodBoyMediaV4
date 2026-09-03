@@ -13,26 +13,10 @@ export default function Hero() {
 
   return (
     <section ref={heroRef} className="hero" id="hero">
-      {/* Video Background */}
-      <div className="hero__video-wrap">
-        <video
-          className="hero__video"
-          src={ASSETS.heroVideo}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        />
-        <div className="hero__video-overlay" />
-      </div>
+
 
       {/* Content */}
       <div className={`hero__content ${isLoaded ? 'hero__content--loaded' : ''}`}>
-        <div className="hero__label font-mono">
-          <span className="hero__label-line" aria-hidden="true" />
-          Creative Studio — Est. 2024
-        </div>
 
         <h1 className="hero__title">
           <span className="hero__title-line hero__title-line--1">
