@@ -67,7 +67,7 @@
 
 .selected-works__item-num {
   font-size: var(--text-xs);
-  color: var(--color-cream);
+  color: var(--color-tomato);
   letter-spacing: var(--tracking-wider);
 }
 
@@ -82,7 +82,7 @@
 }
 
 .selected-works__item:hover .selected-works__item-title {
-  color: var(--color-cream);
+  color: var(--color-tomato);
 }
 
 .selected-works__item-meta {
@@ -145,7 +145,7 @@
 }
 
 .selected-works__link:hover {
-  color: var(--color-cream);
+  color: var(--color-tomato);
   gap: 1.5em;
 }
 

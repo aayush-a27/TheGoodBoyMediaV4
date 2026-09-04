@@ -110,16 +110,16 @@
   background: var(--color-cream, #ffffff);
 }
 
-/* When scrolled on dark navbar variant */
-.navbar--dark.navbar--scrolled .eye-logo__line {
+/* When scrolled */
+.navbar--scrolled .eye-logo__line {
   color: var(--color-charcoal);
 }
 
-.navbar--dark.navbar--scrolled .eye-logo__sclera {
+.navbar--scrolled .eye-logo__sclera {
   background: var(--color-charcoal);
 }
 
-.navbar--dark.navbar--scrolled .eye-logo__pupil {
+.navbar--scrolled .eye-logo__pupil {
   background: var(--color-cream, #ffffff);
 }
 

@@ -94,6 +94,7 @@
   text-align: left;
   gap: 0;
   line-height: 1;
+  margin-left: 5vw; /* Pushes the text a bit to the right */
 }
 
 .hero__title-line {
@@ -192,6 +193,10 @@
 
   .hero__sub {
     text-align: center;
+  }
+
+  .hero__title {
+    margin-left: 2vw;
   }
 
   .hero__scroll-hint {
