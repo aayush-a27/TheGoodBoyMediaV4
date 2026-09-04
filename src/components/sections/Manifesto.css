@@ -1,163 +1,212 @@
+/* ═══════════════════════════════════════════
+   MANIFESTO — Editorial Grid Section
+   ═══════════════════════════════════════════ */
+
 .manifesto {
   position: relative;
-  /* Warm paper background for the section as requested */
   background: var(--color-cream);
-  padding: var(--space-4xl) 0 var(--space-4xl) 0;
-  min-height: 100vh;
+  padding: var(--space-section) 0;
+  min-height: auto;
 }
 
+/* ── Inner container ── */
 .manifesto__inner {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2xl);
   padding-top: var(--space-2xl);
   padding-bottom: var(--space-2xl);
 }
 
-/* Editorial Headers */
-.manifesto__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: var(--space-md);
+/* ── Section intro ── */
+.manifesto__intro {
+  margin-bottom: clamp(2.5rem, 2rem + 3vw, 5rem);
 }
 
-.manifesto__label {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-widest);
-  color: var(--color-warm-gray);
-}
-
-.manifesto__num {
-  color: var(--color-tomato);
+.manifesto__heading {
+  font-family: var(--font-heading);
+  font-style: italic;
   font-weight: var(--weight-bold);
+  font-size: clamp(2.8rem, 2rem + 3.5vw, 5.5rem);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  color: #1a47c7;
+  text-align: left;
+  margin: 0 0 clamp(0.75rem, 0.5rem + 0.8vw, 1.5rem) 0;
 }
 
-.manifesto__label--right {
-  text-align: right;
+.manifesto__description {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.2rem);
+  line-height: var(--leading-relaxed);
   color: var(--color-charcoal);
-  font-weight: var(--weight-medium);
+  max-width: 540px;
+  text-align: left;
+  opacity: 0.75;
 }
 
-/* Bento Grid */
-.manifesto__bento {
-  display: grid;
-  /* Asymmetric grid setup */
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 200px;
-  gap: var(--space-md);
-  width: 100%;
-}
-
-.bento-item {
-  position: relative;
-  background-color: transparent; /* No card styles */
-  overflow: hidden;
-  /* Subtle tactile border */
-}
-
-.bento-img {
-  width: 100%;
-  border-radius: 30px;
-  height: 100%;
-  object-fit: cover;
+.manifesto__description br {
   display: block;
+  content: '';
+  margin-top: 0.3em;
 }
 
-/* Annotations */
-.bento-annotation {
+/* ═══════════════════════════════════════════
+   CARD GRID
+   ═══════════════════════════════════════════ */
+
+.manifesto__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 0.6rem + 1.2vw, 1.5rem);
+  width: 100%;
+}
+
+/* ── Individual Card ── */
+.manifesto-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+/* ── Media area (placeholder) ── */
+.manifesto-card__media {
   position: absolute;
-  bottom: var(--space-sm);
-  left: var(--space-sm);
-  background: var(--color-cream);
-  color: var(--color-charcoal);
-  padding: 0.2em 0.6em;
+  inset: 0;
+  z-index: 0;
+}
+
+.manifesto-card__placeholder {
+  width: 100%;
+  height: 100%;
+  background: #1e1e24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manifesto-card__placeholder-label {
   font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wider);
+  letter-spacing: var(--tracking-widest);
+  color: rgba(255, 255, 255, 0.18);
+  user-select: none;
   pointer-events: none;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 2px 2px 0 rgba(0,0,0,0.05);
 }
 
-/* Grid placements */
-.bento-hero {
-  grid-column: 1 / 8;
-  grid-row: 1 / 4;
+/* ── Gradient overlay for text readability ── */
+.manifesto-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.35) 35%,
+    rgba(0, 0, 0, 0.05) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+  transition: opacity var(--duration-normal) var(--ease-out-quart);
 }
 
-.bento-medium-1 {
-  grid-column: 8 / 13;
-  grid-row: 1 / 3;
+/* ── Card text content ── */
+.manifesto-card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: clamp(1.25rem, 1rem + 1vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
 }
 
-.bento-small-1 {
-  grid-column: 8 / 10;
-  grid-row: 3 / 4;
+.manifesto-card__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: clamp(1.25rem, 1rem + 0.8vw, 1.75rem);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: #ffffff;
+  margin: 0;
 }
 
-.bento-medium-2 {
-  grid-column: 1 / 5;
-  grid-row: 4 / 6;
+.manifesto-card__desc {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: clamp(0.8rem, 0.7rem + 0.3vw, 0.95rem);
+  line-height: var(--leading-normal);
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+  max-width: 280px;
 }
 
-.bento-small-2 {
-  grid-column: 10 / 13;
-  grid-row: 3 / 4;
+/* ── Card hover interaction ── */
+.manifesto-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: border-color var(--duration-normal) var(--ease-out-quart);
+  pointer-events: none;
 }
 
-.bento-medium-3 {
-  grid-column: 5 / 13;
-  grid-row: 4 / 6;
+.manifesto-card:hover::after {
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
+.manifesto-card:hover .manifesto-card__overlay {
+  opacity: 0.85;
+}
 
-/* Responsive Layouts */
+/* Subtle scale on the media placeholder on hover */
+.manifesto-card:hover .manifesto-card__media {
+  transform: scale(1.03);
+}
+
+.manifesto-card__media {
+  transition: transform var(--duration-slow) var(--ease-out-expo);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Tablet (2 columns)
+   ═══════════════════════════════════════════ */
+
 @media (max-width: 1024px) {
-  .manifesto__bento {
-    grid-template-columns: repeat(8, 1fr);
-    grid-auto-rows: 150px;
+  .manifesto__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .bento-hero { grid-column: 1 / 9; grid-row: 1 / 4; }
-  .bento-medium-1 { grid-column: 1 / 5; grid-row: 4 / 6; }
-  .bento-small-1 { grid-column: 5 / 9; grid-row: 4 / 6; }
-  .bento-medium-2 { grid-column: 1 / 6; grid-row: 6 / 8; }
-  .bento-small-2 { grid-column: 6 / 9; grid-row: 6 / 8; }
-  .bento-medium-3 { grid-column: 1 / 9; grid-row: 8 / 10; }
+
+  .manifesto-card {
+    aspect-ratio: 4 / 5;
+  }
 }
 
-@media (max-width: 768px) {
-  .manifesto__bento {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-  }
-  
-  .bento-item {
-    width: 100%;
-    /* Create varied heights to maintain asymmetry even when stacked */
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Mobile (1 column)
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .manifesto__heading {
+    font-size: clamp(2.2rem, 1.5rem + 4vw, 3.2rem);
   }
 
-  .bento-hero { height: 400px; }
-  .bento-medium-1 { height: 250px; }
-  .bento-small-1 { height: 350px; width: 85%; align-self: flex-end; }
-  .bento-medium-2 { height: 300px; width: 90%; }
-  .bento-small-2 { height: 200px; width: 75%; align-self: flex-end; }
-  .bento-medium-3 { height: 350px; }
+  .manifesto__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  }
 
-  
-  .bento-annotation {
-    opacity: 1;
-    transform: translateY(0);
+  .manifesto-card {
+    aspect-ratio: 4 / 5;
+  }
+
+  .manifesto-card__content {
+    padding: clamp(1rem, 0.8rem + 0.8vw, 1.5rem);
   }
 }

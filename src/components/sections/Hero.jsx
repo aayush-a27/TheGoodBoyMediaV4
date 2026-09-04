@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import './Hero.css';
 import { ASSETS } from '../../config/assets';
+import RepelText from '../animation/RepelText';
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -20,16 +21,24 @@ export default function Hero() {
 
         <h1 className="hero__title">
           <span className="hero__title-line hero__title-line--1">
-            WE MAKE
+            <RepelText intensity={1} repelRadius={55}>
+              WE MAKE
+            </RepelText>
           </span>
           <span className="hero__title-line hero__title-line--2">
-            BRANDS
+            <RepelText intensity={1} repelRadius={55}>
+              BRANDS
+            </RepelText>
           </span>
           <span className="hero__title-line hero__title-line--3">
-            <em className="hero__title-italic font-heading">impossible</em>
+            <RepelText intensity={0.9} repelRadius={50}>
+              <em className="hero__title-italic font-heading">impossible</em>
+            </RepelText>
           </span>
           <span className="hero__title-line hero__title-line--4">
-            TO IGNORE
+            <RepelText intensity={1} repelRadius={55}>
+              TO IGNORE
+            </RepelText>
           </span>
         </h1>
 

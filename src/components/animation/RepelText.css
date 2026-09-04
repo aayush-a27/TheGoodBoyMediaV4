@@ -1,0 +1,48 @@
+/* ═══════════════════════════════════════════
+   REPEL TEXT — Interactive Typography
+   ═══════════════════════════════════════════ */
+
+/* ── Container ── */
+.repel-text {
+  position: relative;
+  display: inline;
+}
+
+/* ── Screen-reader only text ── */
+.repel-text__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Visual character wrapper ── */
+.repel-text__visual {
+  display: inline;
+}
+
+/* ── Individual character ── */
+.repel-text__char {
+  display: inline-block;
+  will-change: transform;
+  /* Prevent layout shift — transform only */
+  backface-visibility: hidden;
+}
+
+.repel-text__char--space {
+  /* Non-breaking space already set in JSX; keep it inline-block for consistent spacing */
+  width: 0.3em;
+}
+
+/* ── Reduced motion: no transforms ── */
+@media (prefers-reduced-motion: reduce) {
+  .repel-text__char {
+    will-change: auto;
+    transform: none !important;
+  }
+}
