@@ -134,18 +134,18 @@ export default function EyeLogo() {
   }, [handlePointerMove, handlePointerLeave, updatePupil]);
 
   return (
-    <span className="eye-logo" aria-label="THE GOOD BOY MEDIA">
+    <span className="eye-logo" aria-label="GOOD BOY">
       <span className="eye-logo__line">
-        <span className="eye-logo__text">THE </span>
         <span className="eye-logo__word-good">
           <span className="eye-logo__text">G</span>
           <Eye pupilRef={leftPupilRef} />
           <Eye pupilRef={rightPupilRef} />
           <span className="eye-logo__text">D</span>
         </span>
-        <span className="eye-logo__text"> BOY</span>
       </span>
-      <span className="eye-logo__sub">MEDIA</span>
+      <span className="eye-logo__line eye-logo__line--small">
+        <span className="eye-logo__text">BOY</span>
+      </span>
     </span>
   );
 }

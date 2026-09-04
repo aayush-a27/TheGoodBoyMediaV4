@@ -8,6 +8,9 @@
     position: relative;
     overflow: hidden;
     width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   
   /* 1. TOP INFORMATION BAR */
@@ -79,7 +82,7 @@
   }
   
   .footer-v2__oversized-wordmark {
-    font-size: 13vw; /* Perfect size for 'THE GOOD BOY' to fill width */
+    font-size: 10vw; /* Reduced size for 'THE GOOD BOY' */
     line-height: 0.75;
     font-weight: var(--weight-black);
     color: #000;
@@ -97,12 +100,16 @@
     background: #FF3424;
     color: #ffffff;
     position: relative;
-    padding-top: 18vw; /* MASSIVE padding to prevent grid content from being clipped by the diagonal cut */
-    padding-bottom: var(--space-xl);
+    padding-top: 12vw; /* Reduced to leave space for 100vh */
+    padding-bottom: var(--space-md);
     z-index: 1; /* Red sits behind the text */
     /* Create the sharp diagonal cut */
     clip-path: polygon(0 8vw, 100% 0, 100% 100%, 0 100%);
     margin-top: -8vw; /* Pull it up to meet the text */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
   
   /* ARTWORK OVERLAY */
@@ -130,10 +137,11 @@
   .footer-v2__grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: var(--space-xl);
+    gap: var(--space-lg);
     position: relative;
     z-index: 10;
-    margin-bottom: 8vw;
+    margin-bottom: auto; /* Push below content down if needed, or distribute */
+    margin-top: 2vh;
   }
   
   .footer-v2__label {
@@ -218,7 +226,8 @@
   .footer-v2__newsletter {
     position: relative;
     z-index: 10;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
+    margin-top: var(--space-xl);
   }
   
   .footer-v2__newsletter-inner {
@@ -318,7 +327,7 @@
     }
     
     .footer-v2__oversized-wordmark {
-      font-size: 20vw;
+      font-size: 16vw;
       transform: rotate(-6deg) translateY(2vw);
     }
   

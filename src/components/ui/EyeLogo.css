@@ -6,6 +6,7 @@
 .eye-logo {
   display: flex;
   flex-direction: column;
+  align-items: center;
   line-height: 1;
   user-select: none;
 }
@@ -20,6 +21,11 @@
   letter-spacing: var(--tracking-wider);
   color: #ffffff;
   white-space: nowrap;
+}
+
+.eye-logo__line--small {
+  font-size: clamp(0.4rem, 0.35rem + 0.3vw, 0.65rem);
+  margin-top: -1px;
 }
 
 .eye-logo__sub {
