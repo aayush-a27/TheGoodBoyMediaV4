@@ -129,6 +129,22 @@
   font-size: 1.05em;
 }
 
+.hero__description {
+  max-width: 400px;
+  margin-top: 2rem;
+  margin-left: 5vw;
+  text-align: left;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 1s, transform 0.8s var(--ease-out-expo) 1s;
+}
+
+.hero__content--loaded .hero__description {
+  opacity: 0.8;
+  transform: translateY(0);
+}
+
 /* Bottom */
 .hero__bottom {
   position: absolute;
@@ -196,6 +212,10 @@
   }
 
   .hero__title {
+    margin-left: 2vw;
+  }
+
+  .hero__description {
     margin-left: 2vw;
   }
 

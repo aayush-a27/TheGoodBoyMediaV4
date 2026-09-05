@@ -42,6 +42,10 @@ export default function Hero() {
           </span>
         </h1>
 
+        <p className="hero__description">
+          We help brands connect with people through strategy, storytelling and video
+        </p>
+
         <div className="hero__bottom">
           <div className="hero__scroll-hint" aria-hidden="true">
             <span className="hero__scroll-text font-mono">Scroll</span>
